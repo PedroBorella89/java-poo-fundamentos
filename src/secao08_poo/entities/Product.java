@@ -3,9 +3,42 @@ package secao08_poo.entities;
 public class Product {
 
     // Atributos
-    public String name;
-    public double price;
-    public int quantity;
+    private String name;
+    private double price;
+    private int quantity;
+
+    // Construtor
+    public Product(String name, double price, int quantity) {
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
+    }
+
+    // Getters and Setters
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    /*
+    Não temos o setQuantity, porque em um sistema de verdade a quantidade só pode
+    ser alterada por meio das operações entrada ou saída do estoque.
+    */
 
     // Métodos
     public double totalValueInStock() {

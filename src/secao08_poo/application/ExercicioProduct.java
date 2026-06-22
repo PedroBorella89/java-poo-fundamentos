@@ -12,35 +12,28 @@ public class ExercicioProduct {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        Product product1 = new Product();
         System.out.println("========== Enter product data ========== ");
         System.out.print("Enter product name: ");
-        product1.name = sc.nextLine();
+        String name = sc.nextLine();
         System.out.print("Enter product price: ");
-        product1.price = sc.nextDouble();
+        double price = sc.nextDouble();
         System.out.print("Enter product quantity: ");
-        product1.quantity = sc.nextInt();
-
-        System.out.println();
-        System.out.println("Product data: " + product1);
-
-        System.out.println();
-        System.out.print("Enter the number of products to be added in stock: ");
         int quantity = sc.nextInt();
-        product1.addProducts(quantity);
-
+        Product product = new Product(name, price, quantity);
+        System.out.println("Product data: " + product);
         System.out.println();
-        System.out.println("Updated data: " + product1);
 
+        System.out.print("Enter the number of products to be added in stock: ");
+        int add = sc.nextInt();
+        product.addProducts(add);
+        System.out.println("Updated data: " + product);
         System.out.println();
+
         System.out.print("Enter the number of products to be removed from stock:");
-        quantity = sc.nextInt();
-        product1.removeProducts(quantity);
-
-        System.out.println();
-        System.out.println("Updated data: " + product1);
+        int remove = sc.nextInt();
+        product.removeProducts(remove);
+        System.out.println("Updated data: " + product);
 
         sc.close();
-
     }
 }
