@@ -1,6 +1,6 @@
-package secao08_poo.application;
+package secao09_construtores.application;
 
-import secao08_poo.entities.Account;
+import secao09_construtores.entities.Account;
 
 import java.util.Locale;
 import java.util.Scanner;
@@ -19,7 +19,7 @@ public class ExercicioBankAccount {
         System.out.println(account);
         System.out.println();
 
-        System.out.println("Deseja realizar um depósito inicial? (s/n)");
+        System.out.print("Deseja realizar um depósito inicial? (s/n) ");
         String opcao = sc.nextLine();
         if (opcao.equalsIgnoreCase("s")) {
             System.out.print("Digite o valor do depósito: ");

@@ -1,4 +1,4 @@
-package secao08_poo.entities;
+package secao09_construtores.entities;
 
 public class Account {
 
@@ -41,7 +41,7 @@ public class Account {
     public String toString() {
         return "Número da conta: " + number
                 + " | Titular: " + holder
-                + " | Saldo: " + balance;
+                + " | Saldo: R$ " + String.format("%.2f", balance);
     }
 
     public void updateHolder(String holder) {
