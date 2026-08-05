@@ -12,7 +12,7 @@ public class Employee {
         return salary - tax;
     }
 
-    public void increasySalary(double percentage) {
+    public void increaseSalary(double percentage) {
         salary += salary * percentage /  100;
     }
 

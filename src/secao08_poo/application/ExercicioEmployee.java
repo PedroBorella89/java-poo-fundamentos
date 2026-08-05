@@ -25,7 +25,7 @@ public class ExercicioEmployee {
 
         System.out.print("Which percentage to increase salary? ");
         double percentage = sc.nextDouble();
-        e1.increasySalary(percentage);
+        e1.increaseSalary(percentage);
         System.out.println("Update: " + e1);
 
         sc.close();
