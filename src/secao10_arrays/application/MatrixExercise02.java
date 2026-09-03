@@ -14,8 +14,8 @@ public class MatrixExercise02 {
         int [][] mat = new int [lines][columns];
         System.out.println();
 
-        for (int i = 0; i < lines; i++) {
-            for (int j = 0; j < columns; j++) {
+        for (int i = 0; i < mat.length; i++) {
+            for (int j = 0; j < mat[i].length; j++) {
                 System.out.print("Line " + (i + 1) + " Column " + (j + 1) + ":");
                 mat[i][j] = sc.nextInt();
             }
