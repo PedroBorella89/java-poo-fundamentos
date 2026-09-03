@@ -13,6 +13,7 @@ public class Order {
 
     private Date moment;
     private OrderStatus status;
+
     private Client client;
 
     private List<OrderItem> items = new ArrayList<>();
@@ -47,22 +48,18 @@ public class Order {
         this.client = client;
     }
 
-    public List<OrderItem> getItems() {
-        return items;
+    public void addItem(OrderItem it) {
+        items.add(it);
     }
 
-    public void addItem(OrderItem item) {
-        items.add(item);
+    public void removeItem(OrderItem it) {
+        items.remove(it);
     }
 
-    public void removeItem(OrderItem item) {
-        items.remove(item);
-    }
-
-    public Double total() {
-        Double total = 0.0;
-        for (OrderItem item : items) {
-            total += item.subTotal();
+    public double total() {
+        double total = 0.0;
+        for (OrderItem it : items) {
+            total += it.subTotal();
         }
         return total;
     }
@@ -75,8 +72,8 @@ public class Order {
         sb.append("Order status: " + status + "\n");
         sb.append(client + "\n");
         sb.append("Order items: \n");
-        for (OrderItem item : items) {
-            sb.append(item + "\n");
+        for (OrderItem it : items) {
+            sb.append(it + "\n");
         }
         sb.append("Total price: " + String.format("$%.2f", total()));
         return sb.toString();

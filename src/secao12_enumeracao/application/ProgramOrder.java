@@ -31,14 +31,15 @@ public class ProgramOrder {
         System.out.println();
         System.out.println("===== Enter order data =====");
         System.out.print("Status: ");
-        String status = sc.nextLine();
-        Order order = new Order(new Date(), OrderStatus.valueOf(status), client);
+        OrderStatus status = OrderStatus.valueOf(sc.nextLine());
+        Order order = new Order(new Date(), status, client);
 
         System.out.println();
         System.out.print("How many items to this order? ");
         int items = sc.nextInt();
         sc.nextLine();
         for(int i = 0; i < items; i++) {
+            System.out.println("Enter #" + (i + 1) + " item data:");
             System.out.print("Product name: ");
             String productName = sc.nextLine();
             System.out.print("Product price: ");
@@ -46,10 +47,13 @@ public class ProgramOrder {
             System.out.print("Quantity: ");
             int productQuantity = sc.nextInt();
             sc.nextLine();
-            Product product = new Product(productName, productPrice);
-            OrderItem orderItem = new OrderItem(productQuantity, productPrice, product);
-            order.addItem(orderItem);
             System.out.println();
+
+            Product product = new Product(productName, productPrice);
+
+            OrderItem oi = new OrderItem(productQuantity, productPrice, product);
+
+            order.addItem(oi);
         }
 
         System.out.println(order);
